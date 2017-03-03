@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface LanguageDao extends CrudRepository<Language, Long> {
 
+  Language findOneByName(String name);
+
 }

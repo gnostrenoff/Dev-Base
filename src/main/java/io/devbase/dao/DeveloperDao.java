@@ -11,5 +11,4 @@ import java.util.List;
 public interface DeveloperDao extends CrudRepository<Developer, Long> {
 
   List<Developer> findByLanguage(Language language);
-
 }

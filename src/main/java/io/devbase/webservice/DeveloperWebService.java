@@ -41,4 +41,10 @@ public class DeveloperWebService {
     return ResponseEntity.ok(developerService.getByLanguageId(langId));
   }
 
+  @RequestMapping(method = RequestMethod.GET, path = "/{langName}/languageName", produces = {"application/json"})
+  @ResponseStatus(HttpStatus.OK)
+  public ResponseEntity getByLanguageName(@PathVariable String langName) {
+    return ResponseEntity.ok(developerService.getByLanguageName(langName));
+  }
+
 }

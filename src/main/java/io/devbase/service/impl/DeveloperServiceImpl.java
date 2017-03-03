@@ -22,18 +22,13 @@ public class DeveloperServiceImpl implements DeveloperService {
   private LanguageDao languageDao;
 
   @Override
-  public Developer getById(long id) {
-    return developerDao.findOne(id);
-  }
-
-  @Override
   public Developer create(Developer developer) {
     return developerDao.save(developer);
   }
 
   @Override
   public Developer setLanguage(long languageId, long developerId) {
-    Developer developer = getById(developerId);
+    Developer developer = developerDao.findOne(developerId);
     developer.setLanguage(languageDao.findOne(languageId));
     return developerDao.save(developer);
   }
@@ -41,5 +36,10 @@ public class DeveloperServiceImpl implements DeveloperService {
   @Override
   public List<Developer> getByLanguageId(long id) {
     return developerDao.findByLanguage(languageDao.findOne(id));
+  }
+
+  @Override
+  public List<Developer> getByLanguageName(String name) {
+    return developerDao.findByLanguage(languageDao.findOneByName(name));
   }
 }
