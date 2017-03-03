@@ -6,9 +6,6 @@ import io.devbase.service.LanguageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * @author Louis Amoros on 16/02/17.
- */
 @Service
 public class LanguageServiceImpl implements LanguageService {
 
